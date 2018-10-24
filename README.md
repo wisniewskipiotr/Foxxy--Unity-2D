@@ -5,3 +5,6 @@ implementacji gry na smartfon takich jak Android Studio oraz JDK.
 
 Raport 1 17.10.2018
 Zapoznanie się silnikiem Unity3D oraz językiem C#. Wstępna implemantacja programu testowego na system Android. 
+
+Raport 2 24.10.2018
+Nauka języka programowania C# oraz stworzenie prostych programów za pomocą instrukcji w ramach nauki Unity. Zaznajomienie się z środowiskiem Android Studio.
