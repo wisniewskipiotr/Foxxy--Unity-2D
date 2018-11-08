@@ -8,3 +8,10 @@ Zapoznanie się silnikiem Unity3D oraz językiem C#. Wstępna implemantacja prog
 
 Raport 2 24.10.2018
 Nauka języka programowania C# oraz stworzenie prostych programów za pomocą instrukcji w ramach nauki Unity. Zaznajomienie się z środowiskiem Android Studio.
+
+Raport 3 08.11.2018
+Założenia projektu:
+- w ramach projektu chcę stworzyć zręcznościową grę 2D w silniku Unity na system Android. 
+- mechanika powinna opierać się pokonywaniu przeciwników za pomocą strzelania. Na koniec poziomu chciałbym stworzyć przeciwnika w rodzaju Bossa, u którego zaimplenotowałbym bardziej rozwinięte AI. Główny bohater będzie potrafił się poruszać, skakać, kucać oraz strzelać.
+- AI u przeciwników chciałbym stworzyć za pomocą implementacji drzewka decyzyjnego. U pomniejszych mobów byłoby to prostsze drzewko, z kolei u bossa chciałbym stworzyć znacznie bardziej rozwinięte.
+- Głównym problemem oraz żródłem projektu ma być właśnie AI w grze. Następnie chciałbym by udało się zaimplentować grę na Androida, lecz naczytałem się, że darmowe assety często wysypują się na komórce, lecz uważam, że powinno mi się obejść ten problem.
