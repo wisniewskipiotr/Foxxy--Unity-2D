@@ -15,3 +15,6 @@ Założenia projektu:
 - mechanika powinna opierać się pokonywaniu przeciwników za pomocą strzelania. Na koniec poziomu chciałbym stworzyć przeciwnika w rodzaju Bossa, u którego zaimplenotowałbym bardziej rozwinięte AI. Główny bohater będzie potrafił się poruszać, skakać, kucać oraz strzelać.
 - AI u przeciwników chciałbym stworzyć za pomocą implementacji drzewka decyzyjnego. U pomniejszych mobów byłoby to prostsze drzewko, z kolei u bossa chciałbym stworzyć znacznie bardziej rozwinięte.
 - Głównym problemem oraz żródłem projektu ma być właśnie AI w grze. Następnie chciałbym by udało się zaimplentować grę na Androida, lecz naczytałem się, że darmowe assety często wysypują się na komórce, lecz uważam, że powinno mi się obejść ten problem.
+
+Raport 4 22.11.2018
+Stworzenie przykładowego poziomu, postaci oraz skryptu odpowiedzialnego za podstawowe poruszanie się.
