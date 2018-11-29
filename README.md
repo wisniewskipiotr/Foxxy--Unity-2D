@@ -18,3 +18,6 @@ Założenia projektu:
 
 Raport 4 22.11.2018
 Stworzenie przykładowego poziomu, postaci oraz skryptu odpowiedzialnego za podstawowe poruszanie się.
+
+Raport 5 29.11.2018
+Rozbudowanie poziomu gry, próba przeniesienia dotychczasowych postępów na android, przebudowa gry na innym assecie.
