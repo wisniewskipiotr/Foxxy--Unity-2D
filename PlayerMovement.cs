@@ -21,18 +21,18 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
 
-        // Grab the components in case they weren't loaded properly
+        
         animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController2D>();
 
-        // initialize the start values
+        
         jump = false;
         IsHurt = false;
 
         score = 0;
     }
 
-        // Update is called once per frame
+        
         void Update()
     {
 
