@@ -18,3 +18,10 @@ Założenia projektu:
 
 Raport 4 22.11.2018
 Stworzenie przykładowego poziomu, postaci oraz skryptu odpowiedzialnego za podstawowe poruszanie się.
+
+Raport 5 29.11.2018
+Rozbudowanie poziomu gry, próba przeniesienia dotychczasowych postępów na android, przebudowa gry na innym assecie.\
+
+Prototyp 19.12.18
+Oddanie prototypu- stworzenie 1 poziomu gry wraz z menu, stworzenie prostych przeciwników patrolujących wyznaczony teren. Dodanie obiektów powodujących koniec gry. Stworzenie animacji głównej postaci i przeciwników.
+Po prototypie planuję dodać 2 poziom gry, w którym będzię się odbywała walka z "bosem", posiadającym rozwiniętę drzewko decyzyjne, poprawienie animacji skoku, dodanie głównej postacji ataku specjalnego. Stworzenie menu w trakcie gry.
