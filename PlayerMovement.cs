@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float runSpeed = 40f;
     public Text scoreText;
-    int score;
+
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -29,14 +32,14 @@ public class PlayerMovement : MonoBehaviour
         jump = false;
         IsHurt = false;
 
-        score = 0;
+        
     }
 
         // Update is called once per frame
         void Update()
     {
 
-        scoreText.text = score.ToString();
+        scoreText.text = PlayerStats.Score.ToString();
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
@@ -51,9 +54,11 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+
+
     public void OnLanding()
     {
-        jump = false;
+        
         animator.SetBool("IsJumping", false);
     }
 
@@ -64,28 +69,33 @@ public class PlayerMovement : MonoBehaviour
             jump = true;
             animator.SetBool("IsHurt", true);
             capbox.enabled = false;
+            StartCoroutine(AwaitMenuScreen());
         }
-        else if (col.gameObject.tag == "Enemy")
+        if (col.gameObject.tag == "Enemy")
         {
-            if (jump)
-            {
-                Destroy(col.gameObject);
-                score++;
-            }
-                
-            else
-            {
-                jump = true;
-                animator.SetBool("IsHurt", true);
-                capbox.enabled = false;
-
-            }
+            jump = true;
+            animator.SetBool("IsHurt", true);
+            capbox.enabled = false;
+            StartCoroutine(AwaitMenuScreen());
         }
+        if (col.gameObject.tag == "Teleport")
+
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+        }
+
     }
-            void FixedUpdate()
+
+    IEnumerator AwaitMenuScreen()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+    }
+    void FixedUpdate()
     {
         // Move our character
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        jump = false;
         
     }
 }
