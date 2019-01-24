@@ -83,13 +83,18 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
         }
+        if (col.gameObject.tag == "Teleport2")
+
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2);
+        }
 
     }
 
     IEnumerator AwaitMenuScreen()
     {
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
     }
     void FixedUpdate()
     {
