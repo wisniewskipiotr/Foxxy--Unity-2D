@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
 
+    public Joystick joystick;// ON MOBILE
+    public Joybutton joybutton;// ON MOBILE
     public CharacterController2D controller;
     public Animator animator;
     public CapsuleCollider2D capbox;
@@ -32,23 +34,45 @@ public class PlayerMovement : MonoBehaviour
         jump = false;
         IsHurt = false;
 
-        
+
     }
 
-        // Update is called once per frame
-        void Update()
+    // Update is called once per frame
+    void Update()
     {
+        //horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        //ON MOBILE
+        if (joystick.Horizontal >= .2f)
+        {
+            horizontalMove = runSpeed;
+        }
+        else if (joystick.Horizontal <= -.2f)
+        {
+            horizontalMove = -runSpeed;
+        }
+        else
+        {
+            horizontalMove = 0f;
+        }
+        float verticalMove = joystick.Vertical;
 
         scoreText.text = PlayerStats.Score.ToString();
 
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-        if (Input.GetButtonDown("Jump"))
+        // ON MOBILE
+        //if (Input.GetButtonDown("Jump"))
+        //if (verticalMove >= .5f)
+        if (joybutton.Pressed)
         {
             jump = true;
             animator.SetBool("IsJumping", true);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
         }
 
 
@@ -58,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnLanding()
     {
-        
+
         animator.SetBool("IsJumping", false);
     }
 
@@ -69,9 +93,21 @@ public class PlayerMovement : MonoBehaviour
             jump = true;
             animator.SetBool("IsHurt", true);
             capbox.enabled = false;
+
             StartCoroutine(AwaitMenuScreen());
+            PlayerStats.Score = 0;
         }
+
         if (col.gameObject.tag == "Enemy")
+        {
+            jump = true;
+            animator.SetBool("IsHurt", true);
+            capbox.enabled = false;
+
+            StartCoroutine(AwaitMenuScreen());
+            PlayerStats.Score = 0;
+        }
+        if (GameControlScript.health < 1)
         {
             jump = true;
             animator.SetBool("IsHurt", true);
@@ -81,12 +117,12 @@ public class PlayerMovement : MonoBehaviour
         if (col.gameObject.tag == "Teleport")
 
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         if (col.gameObject.tag == "Teleport2")
 
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
         }
 
     }
@@ -94,13 +130,13 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator AwaitMenuScreen()
     {
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     void FixedUpdate()
     {
         // Move our character
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         jump = false;
-        
+
     }
 }
