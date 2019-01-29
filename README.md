@@ -28,3 +28,6 @@ Po prototypie planuję dodać 2 poziom gry, w którym będzię się odbywała wa
 
 Raport 24.01.19
 Dodanie możliwości strzelania, dodanie bossa, detekcja przeciwnika, orientacja oraz obrót do przeciwnika, poprawienie skoku,dodanie animacji bossa.
+
+Raport ostatni 29.01.19
+Zfinalizowanie gry- rozwinięcie ataków bossa, stworzenie życia bossa, stworzenie życia gracza z ikonami, dodanie możliwości wyboru poziomu, stworznie gry mobilnej na komórkę wraz z joystickami.
