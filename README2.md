@@ -1,5 +1,6 @@
 HOW TO OPEN PROJECT
 
+0. Download Foxxy.zip
 
 1. Extract It
 
